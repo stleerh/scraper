@@ -1,5 +1,5 @@
 #!/bin/env python3
-# File: scrape.sh
+# File: scrape.py
 # Author: Steven Lee
 # Date: 03/21/2024
 
