@@ -20,7 +20,7 @@ To see all options, use the -h option.
 `./chunk.py -h`
 
 ### Preparse web page data
-If you want to do some data cleaning, see the example in **scrape.py**.  The script must be written in Python and it ultimately calls `extract_internal_links`, which is defined in **extract.py**.  Your script then implements a `parse` function that it calls each time it retrieves a web page.
+If you want to do some data cleaning, see the example in [**scrape.py**](https://github.com/stleerh/scraper/blob/main/scrape.py).  The script must be written in Python and it ultimately calls `extract_internal_links`, which is defined in **extract.py**.  Your script then implements a `parse` function that it calls each time it retrieves a web page.
 
 ```
 def parse(html, url, fd):
