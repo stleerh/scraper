@@ -133,6 +133,7 @@ def parse_web_page(html_page, url, data_fd=None):
        @param url  URL
        @param data_fd  File descriptor for data file
     '''
+    print(f'---{url}', file=data_fd) # marker to delineate web pages
     print(html_page.body.get_text(), file=data_fd)
 
 

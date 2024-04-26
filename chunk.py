@@ -89,7 +89,7 @@ def write_file(content):
     if len(content) == 0:
         return
 
-    chunk_fn = f'{path_fn}-{count:02}{ext}'
+    chunk_fn = f'{path_fn}-{count:03}{ext}'
     try:
         with open(chunk_fn, 'w') as fw:
             print(f'Writing {chunk_fn}, {len(content)} bytes...')
