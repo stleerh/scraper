@@ -1,5 +1,5 @@
 #!/bin/env python3
-# Chunk the file into 10 MB per file
+# Chunk the file into some number of bytes per file
 # Author: Steven Lee
 # Date: 03/21/2024
 

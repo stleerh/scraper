@@ -30,7 +30,7 @@ def extract_internal_links(url, data_fn=None, link_fn=None, exclude_fn=None,
         try:
             with open(exclude_fn) as f:
                 exclude_list = [ln.strip() for ln in f.readlines()]
-        except FileNotFoundError:
+        except IOError:
             print('Exclude file not found:', exclude_list, file=sys.stderr)
             sys.exit(1)
 
@@ -38,7 +38,7 @@ def extract_internal_links(url, data_fn=None, link_fn=None, exclude_fn=None,
     if data_fn:
         try:
             fd1 = open(data_fn, 'w', encoding='utf-8')
-        except FileNotFoundError:
+        except IOError:
             print('Uanble to write to', data_fn, file=sys.stderr)
             sys.exit(1)
 
@@ -46,7 +46,7 @@ def extract_internal_links(url, data_fn=None, link_fn=None, exclude_fn=None,
     if link_fn:
         try:
             fd2 = open(link_fn, 'w', encoding='utf-8')
-        except FileNotFoundError:
+        except IOError:
             print('Uanble to write to', link_fn, file=sys.stderr)
             sys.exit(1)
 
@@ -85,7 +85,7 @@ def extract_links_from_file(url_fn, data_fn=None, parse=None):
     if data_fn:
         try:
             fd = open(data_fn, 'w', encoding='utf-8')
-        except FileNotFoundError:
+        except IOError:
             print('Uanble to write to ' + data_fn, file=sys.stderr)
             sys.exit(1)
 
