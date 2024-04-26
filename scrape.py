@@ -11,6 +11,8 @@ import sys
 def parse(html, url, fd):
     '''Define my own parse function!
        @param html  HTML page object (bs4.BeautifulSoup)
+       @param url  Web page URL
+       @param fd  Write the output using this file descriptor
     '''
     # Remove content in all <nav>.
     navs = html.find_all('nav')
@@ -29,10 +31,7 @@ def parse(html, url, fd):
     text = html.body.get_text()
     text = re.sub(r'\n(?:\s*\n)+', '\n', text)
 
-    print(f'---{url}', file=fd)
     print(text, file=fd)
-    #print(html.body.get_text(), file=fd)
-    #print(html, file=fd)
 
 
 if __name__ == '__main__':

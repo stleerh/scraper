@@ -121,6 +121,7 @@ def handle_web_page(url, fd1=None, fd2=None, parse=None):
 
     html_page = BeautifulSoup(response.content, 'html.parser')
     if fd1:
+        print(f'---{url}', file=fd1) # marker to delineate web pages
         if parse is None:
             parse = parse_web_page  # default callback function
         parse(html_page, url, fd1)
@@ -133,7 +134,6 @@ def parse_web_page(html_page, url, data_fd=None):
        @param url  URL
        @param data_fd  File descriptor for data file
     '''
-    print(f'---{url}', file=data_fd) # marker to delineate web pages
     print(html_page.body.get_text(), file=data_fd)
 
 
